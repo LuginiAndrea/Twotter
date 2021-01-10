@@ -33,7 +33,7 @@ h1{
   background: none;
   color: #2b82c9ec;
   font-size: 90%;
-  width: 425px;
+  width: 420px;
   float: left;
   margin: 0 10px;
 }
@@ -97,3 +97,7 @@ p:hover {
 #out-sign-up:hover {
   color: #044479;
 }
+
+.reveal-password {
+  cursor: pointer;
+]

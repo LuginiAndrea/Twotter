@@ -39,7 +39,7 @@
 				<div class="textbox">
 					<i class="fas fa-lock"></i>
 					<input type="password" placeholder="Password" id="login-password">
-					<i id="reveal-password" class="fas fa-eye-slash" ></i> 
+					<i class="fas fa-eye-slash reveal-password" ></i> 
 				</div>
 				<button type="submit" id="btn"> Login </button>
 				<p id="forgot-password">  Password dimenticata? </p> 
@@ -65,9 +65,9 @@
 				<div class="textbox">
 					<i class="fas fa-lock"></i>
 					<input type="password" placeholder="Password" id="sign-up-password">
-					<i id="reveal-password" class="fas fa-eye-slash"></i> 
+					<i class="fas fa-eye-slash reveal-password"></i> 
 				</div>
-				<p id="close-sign-up-button"> <i class="fas fa-times" style="cursor: pointer" id="out-sign-up"></i> </p> <!-- Per uscire dalla finestra di sign up -->
+				<p id="close-sign-up-button"> <i class="fas fa-times" id="out-sign-up"></i> </p> <!-- Per uscire dalla finestra di sign up -->
 			</form>
 		</div>
 		<!--                -->
@@ -75,16 +75,21 @@
 </html>-
 
 <script>
-	document.getElementById("reveal-password").onclick = function () {
-		if (this.className == "fas fa-eye-slash") { 
-			document.getElementById("password").type="text";
-			this.className = "fas fa-eye"; /*cambiamo icona e il tipo dell'input ("cambia l'echo") */
+
+	function show_password () {
+		console.log(this.classList)
+		if (this.classList.contains("fa-eye-slash")) { 
+			document.getElementById("login-password").type="text";
+			this.classList.replace("fa-eye-slash","fa-eye"); /*cambiamo icona e il tipo dell'input ("cambia l'echo") */
 		}
 		else {
-			this.className = "fas fa-eye-slash";
-			document.getElementById("password").type="password";
+			this.classList.replace("fa-eye","fa-eye-slash");
+			document.getElementById("login-password").type="password";
 		}
 	}
+
+	document.getElementsByClassName("reveal-password")[0].onclick = show_password;
+	document.getElementsByClassName("reveal-password")[1].onclick = show_password;
 
 	function input_focus () {
 		var index = 0;
