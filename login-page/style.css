@@ -1,0 +1,99 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+body{
+  background-color: white;
+  font-family: 'Montserrat';
+}
+.box{
+  width: 500px;
+  margin: 5% auto;
+  color: #2b82c9ec;
+}
+h1{
+  text-align: center;
+  font-size: 300%;
+  margin-bottom: 5%;
+}
+.textbox{
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid grey;
+}
+
+.textbox i{
+  width: 26px;
+  float: left;
+  text-align: center;
+}
+.textbox input{
+  border: none;
+  outline: none;
+  background: none;
+  color: #2b82c9ec;
+  font-size: 90%;
+  width: 425px;
+  float: left;
+  margin: 0 10px;
+}
+
+#btn{
+  width: 100%;
+  background: none;
+  border: 2px solid #2b82c9ec;
+  color: #2b82c9ec;
+  padding: 5px;
+  font-size: 110%;
+  cursor: pointer;
+  margin: 3% 0;
+  border-radius: 15px;
+  transition: background 1s ease;
+}
+
+#btn:hover {
+  background-color: #2b82c92d;
+}
+
+p {
+  text-align: center;
+  cursor: pointer;
+}
+
+p:hover {
+  color: #044479;
+}
+
+#sign-up-form {
+  width: 510px;
+  z-index: 1;
+  display: none;
+  position: fixed;
+  margin-left: -5px;
+  top: 6%;
+  background-color: white;
+  border-top: 2px solid #2b82c9ec;
+  border-bottom: 2px solid #2b82c9ec;
+  border-radius: 5px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+#close-sign-up-button {
+  margin-top: 40px;
+  margin-bottom: 0px;
+  font-size: 30px;
+  cursor: default;
+}
+
+#close-sign-up-button:hover {
+  color: #2b82c9ec;
+}
+
+#out-sign-up {
+  cursor: pointer;
+}
+
+#out-sign-up:hover {
+  color: #044479;
+}

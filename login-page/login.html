@@ -1,0 +1,109 @@
+
+
+<!-- Login Page, contains a password and username field. Also has a password reset field (sends a mail ***Look at GMAIL API***) -->
+<!-- Has a Sign up choice -->
+<!-- Composed by Title, username field, password field, password reset link, sign up link, login button -->
+<!-- Maybe add a Remember me????? -->
+
+<!--Sign-up modal box-->
+<!-- Username field, email field, password field, date field, sign up button -->
+
+
+<!-- TODO -->
+	<!-- Comunicazione con server (studiare php, sql e cazzi e mazzi)-->
+	<!-- donnole -->
+<!--      -->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">  <!-- Link per il font -->
+		<title> Twotter/Login </title>
+	</head>
+	
+	<body>
+		 <!-- La parte che si occupa del login -->
+		<div class="box">
+			<form id="login-form">
+				<h1> Login </h1>
+				<div class="textbox">
+					<i class="fas fa-user"></i>
+					<input type="text" placeholder="Username or email" id="login-username">
+				</div>
+				
+				<div class="textbox">
+					<i class="fas fa-lock"></i>
+					<input type="password" placeholder="Password" id="login-password">
+					<i id="reveal-password" class="fas fa-eye-slash" ></i> 
+				</div>
+				<button type="submit" id="btn"> Login </button>
+				<p id="forgot-password">  Password dimenticata? </p> 
+				<p id="sign-up"> Sign up </p>
+			</form>
+		</div>
+		<!--                -->
+
+		<!-- La parte che si occupa del sign-up (triggerata dal click su "sign-up")-->
+		<div class="box">
+			<form id="sign-up-form">
+				<h1> Sign up </h1>
+				<div class="textbox">
+					<i class="fas fa-user"></i>
+					<input type="text" placeholder="Email" id="sign-up-email">
+				</div>
+
+				<div class="textbox">
+					<i class="fas fa-envelope"></i>
+					<input type="text" placeholder="Username"  id="sign-up-username"> 
+				</div>
+				
+				<div class="textbox">
+					<i class="fas fa-lock"></i>
+					<input type="password" placeholder="Password" id="sign-up-password">
+					<i id="reveal-password" class="fas fa-eye-slash"></i> 
+				</div>
+				<p id="close-sign-up-button"> <i class="fas fa-times" style="cursor: pointer" id="out-sign-up"></i> </p> <!-- Per uscire dalla finestra di sign up -->
+			</form>
+		</div>
+		<!--                -->
+	</body>
+</html>-
+
+<script>
+	document.getElementById("reveal-password").onclick = function () {
+		if (this.className == "fas fa-eye-slash") { 
+			document.getElementById("password").type="text";
+			this.className = "fas fa-eye"; /*cambiamo icona e il tipo dell'input ("cambia l'echo") */
+		}
+		else {
+			this.className = "fas fa-eye-slash";
+			document.getElementById("password").type="password";
+		}
+	}
+
+	function input_focus () {
+		var index = 0;
+		if (this == document.getElementsByTagName("input")[1]) index = 1; /* Individuiamo quale è la textbox associata */
+		document.getElementsByClassName("textbox")[index].style.borderBottomColor = "#2b82c9ec";
+	}
+
+	function input_focus_out () {
+		var index = 0;
+		if (this == document.getElementsByTagName("input")[1]) index = 1; 
+		document.getElementsByClassName("textbox")[index].style.borderBottomColor = "grey";
+	}
+
+	document.getElementsByTagName("input")[0].addEventListener("focusin",input_focus);	/* Focus delle caselle di testo */
+	document.getElementsByTagName("input")[1].addEventListener("focusin",input_focus);	
+	document.getElementsByTagName("input")[0].addEventListener("focusout",input_focus_out);	
+	document.getElementsByTagName("input")[1].addEventListener("focusout",input_focus_out);	
+
+	document.getElementById("sign-up").onclick = function () {	document.getElementById("sign-up-form").style.display = "block"; }
+	document.getElementById("out-sign-up").onclick = function () { document.getElementById("sign-up-form").style.display = "none"; }
+
+</script>
